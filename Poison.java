@@ -22,10 +22,11 @@ public class Poison extends Animal
         move();
         if (atWorldEdge())
         {
-            getWorld().removeObject(this);
+            World world = getWorld();
+            world.removeObject(this);
             //Subworld spawnObject = new Subworld();
             //spawnObject.spawner();
-            getWorld().addObject(this, Greenfoot.getRandomNumber(getWorld().getWidth()), Greenfoot.getRandomNumber(getWorld().getHeight()));
+            world.addObject(this, Greenfoot.getRandomNumber(world.getWidth()), Greenfoot.getRandomNumber(world.getHeight()));
         }
     }
    }
