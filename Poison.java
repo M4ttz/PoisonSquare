@@ -19,14 +19,26 @@ public class Poison extends Animal
         {
             eat(User.class);
         }
-        move();
+        mover();
+    }
+    int a = 2;
+    int b = Greenfoot.getRandomNumber(270);
+    public void mover()
+    {
+        move(a);
         if (atWorldEdge())
         {
             World world = getWorld();
-            world.removeObject(this);
+            turn(b);
+            a = a + 1;
             //Subworld spawnObject = new Subworld();
             //spawnObject.spawner();
-            world.addObject(this, Greenfoot.getRandomNumber(world.getWidth()), Greenfoot.getRandomNumber(world.getHeight()));
+            
+            //world.addObject(this, Greenfoot.getRandomNumber(world.getWidth()), Greenfoot.getRandomNumber(world.getHeight()));
+        }
+        if (a > 10)
+        {
+            a = 10;
         }
     }
    }
